@@ -1,6 +1,6 @@
 # my-docker-platform
 
-- Run PostgreSQL,MySQL, MongoDB, and Redis in docker
+- Run PostgreSQL, MySQL, MongoDB, Redis and Kafka in docker
 
 - The project can used in development environment
 
@@ -135,4 +135,4 @@ curl http://localhost:8085
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/techiall/docker-mysql-mongo-redis/blob/master/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/shunchaowang/my-platform-docker/LICENSE) file for details.
