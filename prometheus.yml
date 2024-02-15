@@ -6,7 +6,7 @@ scrape_configs:
       - targets:
           - prometheus:9090
   - job_name: spring-actuator # add a job to scrape from spring boot app locally
-    metrics_path: "/acutator/prometheus"
+    metrics_path: "/actuator/prometheus"
     scrape_interval: 5s
     static_configs:
-      - targets: ["localhost:8080"]
+      - targets: ["192.168.86.21:8080"] # ip needs to use since prometheus runs in docker
