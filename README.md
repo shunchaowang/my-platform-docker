@@ -133,6 +133,8 @@ to access the ui once the docker container is up
 curl http://localhost:8085
 ```
 
+### Prometheus
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/shunchaowang/my-platform-docker/LICENSE) file for details.

@@ -38,7 +38,7 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - postgres
+      - localpaas
     restart: unless-stopped
 
   pgadmin:
@@ -53,7 +53,7 @@ services:
     ports:
       - "${PGADMIN_PORT:-5050}:80"
     networks:
-      - postgres
+      - localpaas
     restart: unless-stopped
 
   zoo1:
@@ -129,8 +129,18 @@ services:
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka1:9092,kafka2:9003,kafka3:9004
       DYNAMIC_CONFIG_ENABLED: "true"
 
+  prometheus:
+    image: bitnami/prometheus:latest
+    container_name: prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - "./prometheus.yml:/etc/prometheus/prometheus.yml"
+    networks:
+      - localpaas
+
 networks:
-  postgres:
+  localpaas:
     driver: bridge
 
 volumes:
