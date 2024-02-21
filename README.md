@@ -133,7 +133,23 @@ to access the ui once the docker container is up
 curl http://localhost:8085
 ```
 
-### Prometheus
+## Prometheus
+
+Prometheus should be accessible at localhost with port 9090.
+
+```curl http://localhost:9090
+
+```
+
+Note that the target for spring boot app should be using the real ip since prometheus runs in docker.
+
+## Grafana
+
+Grafana is a visualize tool for prometheus, once the platform runs, access localhost:3000, the default credential is admin/admin.
+
+### Configure Prometheus on Grafana
+
+Access grafana at localhost:3000, then add a new Dashboard by clicking 'Add Visualization', put premetheus as the data source, note to use the real ip.
 
 ## License
 
