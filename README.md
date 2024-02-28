@@ -63,7 +63,15 @@ docker compose down
 
 ### Access mysql
 
-I use DBeaver to connect to the mysql when docker is up
+- I use DBeaver to connect to the mysql when docker is up
+
+- mysql cli to access
+
+```
+mysql -h 127.0.0.1 -u root -p
+```
+
+if the db in MYSQL_DATABASE is not created when docker is up, make sure `./data/mysql` is empty
 
 ### Access mongo
 
@@ -76,6 +84,13 @@ TODO
 ### Access postgres
 
 - use postgres sql command line to access the database
+
+```
+psql -h localhost -p 5432 -U user -d postgres
+```
+
+if the authentication fails, it could be the credential changes after the volume is created, delete the ./data/postgres and rerun `docker compose up -d` to regenerate the data volume
+
 - use pdadmin dashboard to access the database
 
 #### access the postgres using the cli on the host machine
