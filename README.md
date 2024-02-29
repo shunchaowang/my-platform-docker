@@ -166,6 +166,14 @@ Grafana is a visualize tool for prometheus, once the platform runs, access local
 
 Access grafana at localhost:3000, then add a new Dashboard by clicking 'Add Visualization', put premetheus as the data source, note to use the real ip.
 
+## Get into the container shell
+
+get the docker id by running `docker ps`, then run command to get into the container's shell
+
+```
+docker exec -it <container> bash
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/shunchaowang/my-platform-docker/LICENSE) file for details.

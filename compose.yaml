@@ -26,7 +26,7 @@ services:
       - ./data/redis:/data
 
   postgres:
-    container_name: postgres_container
+    container_name: postgres-container
     image: postgres
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-user}
@@ -41,7 +41,7 @@ services:
     restart: unless-stopped
 
   pgadmin:
-    container_name: pgadmin_container
+    container_name: pgadmin-container
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
@@ -150,6 +150,33 @@ networks:
   localpaas:
     driver: bridge
 # volumes:
-#   postgres:
-#   pgadmin:
-#   mysql:
+#   mysqldb:
+#     driver: local
+#     driver_opts:
+#       type: "none"
+#       o: "bind"
+#       device: "./data/mysql"
+#   mongodb:
+#     driver: local
+#     driver_opts:
+#       type: "none"
+#       o: "bind"
+#       device: "./data/mongo"
+#   postgresdb:
+#     driver: local
+#     driver_opts:
+#       type: "none"
+#       o: "bind"
+#       device: "./data/postgres"
+#   pgadmindb:
+#     driver: local
+#     driver_opts:
+#       type: "none"
+#       o: "bind"
+#       device: "./data/pgadmin"
+#   redisdb:
+#     driver: local
+#     driver_opts:
+#       type: "none"
+#       o: "bind"
+#       device: "./data/redis"
